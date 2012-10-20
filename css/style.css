@@ -1,0 +1,71 @@
+/*
+ * Copyright 2012 Brasil ao Mundo. All rights reserved.
+ * @author Rodrigo Silveira
+ * @url http://www.rodrigo-silveira.com
+ * @date October 2012
+ */
+
+ body {
+    background: #000 url("../img/background-cloud.jpg") top center no-repeat;
+ }
+ 
+ .semitransBlack20 {
+    background: url("../img/background-black-20p.png");
+ }
+ 
+  .semitransBlack50 {
+    background: url("../img/background-black-50p.png");
+ }
+
+ #header {
+    height: 65px;
+ }
+
+ #header h1 {
+    color: #09f;
+    font-weight: 800;
+ }
+ 
+ #header h1 span {
+    color: #fff;
+ }
+ 
+ #header p {
+    color: #fff;
+ }
+
+ #billboard {
+    padding: 75px 0;
+ }
+ 
+ #billboardLeft {
+    padding: 0 40px;
+ }
+ 
+ #billboardLeft h2 {
+    color: #fff;
+ }
+ 
+ #billboardLeft div {
+    padding: 10px 20px;
+    position: relative;
+ }
+
+ #billboardLeft div a {
+    position: absolute;
+    right: -20px;
+    bottom: -20px;
+ }
+ 
+ #billboardLeft img {
+    border: 0;
+ }
+ 
+ #billboardLeft p {
+    color: #fff;
+ }
+ 
+ #slilderRule {
+    height: 1px;
+    background: url("../img/dotted-line.png");
+ }
