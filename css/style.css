@@ -189,3 +189,34 @@
     text-align: center
  }
  
+ .launcherBackground {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: url("../img/background-black-50p.png");
+ }
+ 
+ .launcherBackground div {
+    width: 940px;
+    height: 500px;
+    padding: 10px;
+    margin: 50px auto 0;
+    background: #fff;
+    text-align: center;
+ }
+ 
+ .launcherBackground iframe {
+    width: 100%;
+    height: 100%;
+ }
+ 
+ .launcherBackground p {
+    display: inline-block;
+    margin: 0 auto;
+    padding: 5px 15px;
+    background: #fff;
+    cursor: pointer;
+ }
+ 

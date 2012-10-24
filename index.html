@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
    <head>
-      <meta charset="iso-8859-1">
+      <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
       <title>Brasil ao Mundo</title>
       <meta name="viewport" content="width=device-width">
       <link rel="stylesheet" type="text/css" href="css/reset.css"/>
@@ -17,7 +17,7 @@
       <div class="container">
          <div class="row semitransBlack20" id="header">
             <div class="span6" id="headerLeft"><h1>Brasil<span>aoMundo</span></h1></div>
-            <div class="span6" id="headerRight"><p>Alcance suas metas financeiras com um site do Brasil ao mundo.<br/>Solução turnkey para negócios pela internet</p></div>
+            <div class="span6" id="headerRight"><p>Alcance suas metas financeiras com um site do Brasil ao mundo.<br/>SoluÃ§Ã£o turnkey para negÃ³cios pela internet</p></div>
          </div>
          
          <div class="row" id="billboard">
@@ -41,7 +41,7 @@
          
          <div class="row">
             <div class="span12 slilderRule">
-               <p>"Em 2011, o Brasil foi o país com o maior número de usuários de internet na América Latina. Nos próximos anos, o número de compradores on-line na América Latina crescerá anualmente em torno de 20%. Comércios eletrônicos na América Latina é esperado aumentar para US$30 bilhões de doláres em 2013." Stats.com</p>
+               <p>"Em 2011, o Brasil foi o paÃ­s com o maior nÃºmero de usuÃ¡rios de internet na AmÃ©rica Latina. Nos prÃ³ximos anos, o nÃºmero de compradores on-line na AmÃ©rica Latina crescerÃ¡ anualmente em torno de 20%. ComÃ©rcios eletrÃ´nicos na AmÃ©rica Latina Ã© esperado aumentar para US$30 bilhÃµes de dolÃ¡res em 2013." Stats.com</p>
             </div>
          </div>
          
@@ -58,7 +58,7 @@
                   <li><span>Tres simples passos para lancar seu site e comecar a ganhar dinheiro</span></li>
                </ul>
                
-               <a href="#" class="buttonBlue">Inscreva-se já!</a>
+               <a href="#" class="buttonBlue">Inscreva-se jÃ¡!</a>
             </div>
             
             <div class="span3 miniThumbnail">
@@ -69,7 +69,7 @@
             
             <div class="span3 miniThumbnail">
                <img src="img/thumbnail02.jpg" alt="Brasil ao Mundo"/>
-               <h4>Só se precisa de</h4>
+               <h4>SÃ³ se precisa de</h4>
                <p>habilidades basicas de digitacao e acesso a internet para lancar sua empresa virtual e fazer vendas do Brasil ao Mundo!</p>
             </div>
          </div>
@@ -80,14 +80,47 @@
          <div class="container">
             <div class="row">
                <div class="span12 centerAlign">
-                  <p>Política de Privacidade | Termos e Condições | Contato</p>
-                  <p>Temos orgulho em oferecer uma oportunidade de obter renda pela Internet com uma plataforma simples. Porém, nossos produtos e serviços são muito populares em todo o mundo. Como resultado, há muitos outros sites que podem postar links para esta página. Embora nós monitoramos e aleatoriamente verificamos os sites que anunciam nossos serviços através de links à nossa página, não podemos ser responsabilizados pelo conteúdo de qualquer site que não controlamos. Informamos a todos que as alegações de ganhos de qualquer tipo são estritamente contra a nossa política, sendo que os resultados variam de acordo com o próprio esforço de cada indivíduo. Queremos que nossos clientes alcancem os melhores resultados possíveis. Nossa meta é fornecer uma experiência agradável com o melhor atendimento ao cliente que você possa encontrar.</p>
-                  <p>Todas as marcas comerciais, logotipos e marcas de serviço (coletivamente chamadas de 'Marcas') apresentadas são marcas registradas ou não registradas de seus respectivos proprietários...</p>
+                  <p>PolÃ­tica de Privacidade | <a href="#" id="launcherAnchor">Termos e CondiÃ§Ãµes</a> | Contato</p>
+                  <p>Temos orgulho em oferecer uma oportunidade de obter renda pela Internet com uma plataforma simples. PorÃ©m, nossos produtos e serviÃ§os sÃ£o muito populares em todo o mundo. Como resultado, hÃ¡ muitos outros sites que podem postar links para esta pÃ¡gina. Embora nÃ³s monitoramos e aleatoriamente verificamos os sites que anunciam nossos serviÃ§os atravÃ©s de links Ã  nossa pÃ¡gina, nÃ£o podemos ser responsabilizados pelo conteÃºdo de qualquer site que nÃ£o controlamos. Informamos a todos que as alegaÃ§Ãµes de ganhos de qualquer tipo sÃ£o estritamente contra a nossa polÃ­tica, sendo que os resultados variam de acordo com o prÃ³prio esforÃ§o de cada indivÃ­duo. Queremos que nossos clientes alcancem os melhores resultados possÃ­veis. Nossa meta Ã© fornecer uma experiÃªncia agradÃ¡vel com o melhor atendimento ao cliente que vocÃª possa encontrar.</p>
+                  <p>Todas as marcas comerciais, logotipos e marcas de serviÃ§o (coletivamente chamadas de 'Marcas') apresentadas sÃ£o marcas registradas ou nÃ£o registradas de seus respectivos proprietÃ¡rios...</p>
                   <p>Seus resultados podem variar.</p>
                   <p>Copyright - 2012 Fulfill Brazil - Todos Direitos Reservados</p>
                </div>
             </div>
          </div>
       </div>
+      
+      <script src="js/jquery.min.js"></script>
+      <script>
+         function createLauncher(url) {
+            var launcher = document.createElement("div");
+            var shell    = document.createElement("div");
+            var frame    = document.createElement("iframe");
+            var closer   = document.createElement("p")
+            
+            launcher.className = "launcherBackground";
+            frame.src = url;
+            closer.innerText = "FECHAR";
+            
+            shell.appendChild(frame);
+            shell.appendChild(closer);
+            launcher.appendChild(shell);
+            
+            return launcher;
+         }
+         
+         (function(){
+            $("#launcherAnchor").live("click", function(){
+               $(".launcherBackground").remove();
+               $("body").append(createLauncher("termos-condicoes.html"));
+               return false;
+            });
+            
+            $(".launcherBackground p").live("click", function(){
+               $(".launcherBackground").remove();
+               return false;
+            });
+         })();
+      </script>
    </body>
 </html>
