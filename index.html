@@ -92,6 +92,9 @@
       
       <script src="js/jquery.min.js"></script>
       <script>
+         // ---------------------------------------------------
+         // 
+         // ---------------------------------------------------
          function createLauncher(url) {
             var launcher = document.createElement("div");
             var shell    = document.createElement("div");
@@ -109,6 +112,57 @@
             return launcher;
          }
          
+         // ---------------------------------------------------
+         // 
+         // ---------------------------------------------------
+         function setCookie(key, val, daysToExp) {
+            if (typeof daysToExp == "undefined")
+               daysToExp = 30;
+            
+            var date = new Date();
+            date.setDate(date.getDate() + daysToExp);
+            var exp = date.toGMTString();
+
+            document.cookie = (key + "=" + val + ";expires=" + exp);
+         }
+         
+         // ---------------------------------------------------
+         // 
+         // ---------------------------------------------------
+         function deleteCookie(key) {
+            return setCookie(key, "", -1);
+         }
+
+         // ---------------------------------------------------
+         // 
+         // ---------------------------------------------------
+         function getCookie(key) {
+            if (typeof document.cookie == "undefined")
+               return false;
+
+            var cookie = document.cookie.split(";");
+            for (var i = 0, len = cookie.length; i < len; i++) {
+               if (cookie[i].indexOf(key) == 0 || cookie[i].indexOf(key) == 1) {
+                  var c = cookie[i].split("=");
+                  return c[1];
+               }
+            }
+            
+            return false;
+         }
+         
+         // ---------------------------------------------------
+         // 
+         // ---------------------------------------------------
+         function assignPage() {
+            var pages = ["one", "two", "three", "four"];
+            var choice = parseInt(Math.random() * pages.length);
+            return pages[choice];
+         }
+
+         // ---------------------------------------------------
+         // Main
+         // ---------------------------------------------------
          (function(){
             $("#launcherAnchor").live("click", function(){
                $(".launcherBackground").remove();
@@ -120,6 +174,10 @@
                $(".launcherBackground").remove();
                return false;
             });
+            
+            // Assign a page if one not assigned
+            if (!getCookie("__pa"))
+               setCookie("__pa", assignPage());
          })();
       </script>
    </body>
